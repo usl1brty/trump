@@ -1,0 +1,30 @@
+
+
+<div class="row">
+  <div class="col-md-12 ml-auto mr-auto">
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <p>We need to be sure everyone pledging is real, so fill in the form and you will be
+        sent an email with a link to verify you're a real person.  Please click the link in that email
+        and you will be redirected to this site where you can then choose the amount to pledge.</p>
+
+      <div class="form-group">
+        <%= f.text_field :name, autofocus: false, class: 'form-control', :required => true, placeholder: "First and Last Name" %>
+      </div>
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: false, class: 'form-control', placeholder: "Email Address" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Click to Authenticate then Check Your Email", class: "btn btn-primary
+        btn-block btn-sm" %>
+      </div>
+      <%= render 'shared/notices' %>
+      <p>We will never share your email. <hr> <p> Please also consider a donation to support this site.</p>
+    <% end %>
+
+      <%= render 'shared/buttons' %>
+
+  </div>
+</div>

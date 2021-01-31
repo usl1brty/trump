@@ -1,0 +1,85 @@
+<% if current_user %>
+<div class="hero-image">
+  <div class="hero-text">
+    <p>Uh Oh, something went wrong with your donation <%= current_user.first_name %>!</p>
+    <p> Please try again.  Thanks! </p>
+        <%= render 'shared/buttons' %>
+
+    <p class="text-center"> <%= @users.pledged.pledged.count %> people have pledged
+      <%= number_to_currency(@users.pledged.sum(&:pledge)) %> so far.</p>
+
+   <p>Email verified as <strong><%= current_user.email %></strong>.
+   <%= link_to "Not you or use a different email?", destroy_user_session_path,
+   method: :delete, :class => 'navbar-link'  %></p>
+
+
+</div></div>
+
+<div class="col-md-12"
+<div class="col-md-10 shadowcontainer">
+<!-- Comments -->
+<br>
+<div class="col-md-12"><br>
+  <% if current_user && current_user.comments.blank? %>
+  <p>Please leave a comment.  Donations will be used
+  to maintain this site and for hosting on Heroku. The more
+  interest we get, the more it cost.</p>
+  <%= render :template => 'devise/registrations/edit'  %>
+  <% end %>
+
+  <h3>Reasons for Pledging:</h3>
+  <br>
+  <% @users.withcomments.each do |user| %>
+
+  <%= image_tag avatar_path(user), height: 70, width: 70, class: "roundavatar" %>&nbsp&nbsp
+  <%= user.first_name %>
+  <br><br>
+  <p><%= user.comments %></p>
+<hr>
+  <% end %>
+</div>
+<br><br>
+</div></div>
+
+<% else %>
+
+<div class="hero-image">
+  <div class="col-md-12 hero-text">
+    <p>Uh Oh, something went wrong with your donation!</p>
+    <p> Please try again.  Thanks! </p>
+        <%= render 'shared/buttons' %>
+        <p class="text-center"><%= number_to_currency(Charge.sum(:amount)) %>
+          in generous donations so far.</p>
+
+          <h2>Or please make a pledge to own Trump debt.</h2>
+      <br>
+      <%= render :template => 'devise/registrations/pledge'  %>
+    <p class="text-center"> <%= @users.pledged.pledged.count %> people have pledged
+      <%= number_to_currency(@users.pledged.sum(&:pledge)) %> so far.</p>
+    <a href="http://twitter.com/share?text=Torment%20Trump,%20join%20me%20#trumpdebt%20&url=http:localhost:3000">
+      <i class="fab fa-twitter"> #trumpdebtcrowdfund</i></a>
+<br><br><br><br>
+
+</div></div>
+
+
+<div class="col-md-11 centercontainer">
+<!-- Comments -->
+<br>
+<div class="col-md-12"><br>
+
+  <h3>Reasons for Pledging:</h3>
+  <br>
+
+  <% @users.withcomments.each do |user| %>
+  <%= image_tag avatar_path(user), height: 70, width: 70, class: "roundavatar" %>&nbsp&nbsp
+  <%= user.first_name %>
+  <br><br>
+  <p><%= user.comments %></p>
+<hr>
+  <% end %>
+</div>
+<br><br>
+
+<% end %>
+</div>

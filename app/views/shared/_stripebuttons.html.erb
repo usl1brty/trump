@@ -1,0 +1,83 @@
+<div class="text-center">
+
+  <button
+  id="checkout-button-price_1HMGWZIwQF905tIWtf8fF1ps"
+  role="link"
+  type="button"
+>
+  $3
+</button>
+
+<button
+  id="checkout-button-price_1HLxx5IwQF905tIW7PYAJhoX"
+  role="link"
+  type="button"
+>
+  $5
+</button>
+
+<button
+    id="checkout-button-price_1HLxx5IwQF905tIWiL7VXj04"
+    role="link"
+    type="button"
+  >
+    $10
+  </button>
+
+<button
+  id="checkout-button-price_1HLxx5IwQF905tIWgitKjq2i"
+  role="link"
+  type="button"
+>
+  $20
+</button>
+
+<button
+id="checkout-button-price_1HLxx5IwQF905tIWshGwr9Al"
+  role="link"
+  type="button"
+>
+  $100
+</button>
+
+</div>
+
+
+<script src="https://js.stripe.com/v3"></script>
+
+<script>
+  (function() {
+    var stripe = Stripe('pk_live_51HLjsHIwQF905tIWrmG9JBl1uJ3JHKZ1QdkReG79yelxSZHBq5bRnEsNgwissasiYbzEg21VR3y3sF4lyNenSdUk00U0dZUiV1');
+
+    var checkoutButton = document.getElementById('checkout-button-price_1HMGWZIwQF905tIWtf8fF1ps');
+    checkoutButton.addEventListener('click', function () {
+      /*
+       * When the customer clicks on the button, redirect
+       * them to Checkout.
+       */
+      stripe.redirectToCheckout({
+        lineItems: [{price: 'price_1HMGWZIwQF905tIWtf8fF1ps', quantity: 1}],
+        mode: 'payment',
+        /*
+         * Do not rely on the redirect to the successUrl for fulfilling
+         * purchases, customers may not always reach the success_url after
+         * a successful payment.
+         * Instead use one of the strategies described in
+         * https://stripe.com/docs/payments/checkout/fulfill-orders
+         */
+        successUrl: 'https://twitter.com/Outofbeltway/success',
+        cancelUrl: 'https://twitter.com/Outofbeltway/canceled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          /*
+           * If `redirectToCheckout` fails due to a browser or network
+           * error, display the localized error message to your customer.
+           */
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+  </script>

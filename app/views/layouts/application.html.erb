@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <%= render 'shared/head' %>
+    <script src="https://js.stripe.com/v3/"></script>
+
+
+</head>
+
+  <body>
+
+    <%= render 'shared/navbar' %>
+
+    <div class="notification global-notification">
+    <%= render 'shared/notices' %>
+    </div>
+
+      <%= yield %>
+
+      <%= render 'shared/footer' %>
+
+  </body>
+
+
+</html>

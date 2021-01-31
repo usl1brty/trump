@@ -1,0 +1,254 @@
+// $navbar-default-bg: #312312;
+// $light-orange: #ff8c00;
+// $navbar-default-color: $light-orange;
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Encode+Sans+Condensed:wght@100&display=swap');
+
+.fit-image {
+  width: 350px;
+  max-height: 100%;
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 18px;
+}
+
+body, html {
+    // margin:100;
+    // padding:100;
+    height: 100%;
+    // position:relative;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('https://trumpdebt.s3.ca-central-1.amazonaws.com/trumpfamily.jpeg');
+  /* Set a specific height */
+  height: 100%;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // position: relative;
+  background-attachment:fixed;
+  display:block;
+
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-marq{
+  // background-color: #F6F9FB;
+  // border-top: 1px solid black;
+  // border-bottom: 1px solid black;
+}
+
+.showpic {
+    margin-bottom: -120px;
+    margin-top: -180px;
+    margin-right: -35px;
+    margin-left: -15px;
+    border:4px solid white;
+    border-radius: 100px;
+    height: 90%;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.aboutpic {
+    // margin-bottom: -120px;
+    margin-top: -0px;
+    margin-right: -75px;
+    margin-left: -45px;
+    border:4px solid white;
+    border-radius: 100px;
+    height: auto;
+    max-width: 240px;
+    max-height: 240px;
+}
+
+.roundavatar {
+    border:4px solid white;
+    border-radius: 100px;
+}
+
+.marqueeavatar {
+    // border:4px solid white;
+    border-radius: 100px;
+}
+
+.footer-custom {
+    background-color: #0101DF;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  background-color: white;
+}
+
+.footer span {
+  color: white;
+}
+
+button{
+  background-color: red !important;
+  margin: 4px !important;
+  width: 50px !important;
+  background-color:#6772E5;
+  color:#FFF;
+  padding: 6px 10px;
+  border:0;
+  border-radius:2px;
+  font-size:.8em;
+}
+
+.button{
+  background-color: red !important;
+  margin: 4px !important;
+  width: 50px !important;
+  background-color:#6772E5;
+  color:#FFF;
+  padding: 6px 10px;
+  border:0;
+  border-radius:2px;
+  font-size:.8em;
+}
+
+.marquee {
+  height: 35px;
+  width: 300%;
+  position: relative;
+  padding: 4px 0 4px 0;
+  border: none;
+}
+.marq{
+  background-color: #F6F9FB;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.marquee span {
+  float: left;
+  width: auto;
+}
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -150%; }
+}
+
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+// @import "jumpstart/sticky-footer";
+@import "jumpstart/announcements";
+
+// Fixes bootstrap nav-brand container overlap
+@include media-breakpoint-down(xs) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  body, html {
+    padding: 38px 0px 160px 0px;
+  }
+  .hero-image {
+    height: 70vh;
+    width: 100vw;
+    background-size: cover;
+  }
+  .fit-image {
+    width: 270px;
+    max-height: 100%;
+    margin-bottom: 18px;
+    margin-right: 18px;
+  }
+}
+
+
+.navbar {
+  opacity: .99;
+  // border: .5px solid #d4d3cf;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 17px;
+  margin-bottom: 90px;
+  margin-top: 0;
+  // background-color: transparent;
+}
+.navbar-custom {
+    background-color: #0101DF;
+}
+.navbar-brand {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: white !important;
+}
+.navbar-custom a {
+  color: white !important;
+}
+
+.navbar-custom a:hover {
+  // background-color: white;
+  color: black !important; // Any color for text
+}
+
+// Masquerade alert shouldn't have a bottom margin
+body > .alert {
+  margin-bottom: 0;
+}
+.shadowcontainer {
+   width: auto;
+   // max-width: 500px;
+   min-height: 690px;
+   max-height: auto;
+   box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.5);
+   background-color: white;
+   padding: 20px;
+   margin: 25px 0px 0px 0px;
+   border-radius: 3px;
+ }
+
+.homecontainer {
+  width: auto;
+  height: auto;
+  margin: 10px auto;
+  padding: 20px;
+  background: black;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+  color: white;
+  border-radius: 0px;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.centercontainer {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  padding: 55px 0px 60px 0px;
+  background-color: #F6F9FB;
+  height: 100vh;
+  font-family: 'Archivo Narrow', sans-serif;
+  // margin-bottom: 60px;
+}

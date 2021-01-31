@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-12 ml-auto mr-auto">
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+
+
+      <div class="form-group">
+        <%= f.text_area :comments, autofocus: false, class: 'form-control', placeholder:
+        "Leave your comment here." %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div class="alert alert-warning">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+
+      <div class="form-group">
+        <%= f.submit "Submit Comment", class: 'btn btn-sm btn-block btn-primary' %>
+      </div>
+    <% end %>
+    <p> Please also consider a donation to support this site.</p>
+      <%= render 'shared/buttons' %>
+      <p class="text-center"><%= number_to_currency(Charge.sum(:amount)) %> in generous donations so far.</p>
+
+    </div>
+</div>
