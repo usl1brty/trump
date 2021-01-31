@@ -114,9 +114,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise_masquerade (1.2.0)
-      devise (>= 4.7.0)
-      railties (>= 5.2.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
@@ -193,8 +190,6 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
-    mustermann (1.1.1)
-      ruby2_keywords (~> 0.0.1)
     name_of_person (1.1.1)
       activesupport (>= 5.2.0)
     nio4r (2.5.4)
@@ -236,8 +231,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
-    rack-protection (2.1.0)
-      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -303,11 +296,6 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
-    sinatra (2.1.0)
-      mustermann (~> 1.0)
-      rack (~> 2.2)
-      rack-protection (= 2.1.0)
-      tilt (~> 2.0)
     sitemap_generator (6.1.2)
       builder (~> 3.0)
     spring (2.1.1)
@@ -368,12 +356,10 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise (~> 4.7, >= 4.7.1)
   devise-bootstrapped!
-  devise_masquerade (~> 1.2)
   font-awesome-sass (~> 5.13)
   friendly_id (~> 5.3)
   image_processing
   jbuilder (~> 2.7)
-  kaminari
   listen (~> 3.2)
   mini_magick (~> 4.10, >= 4.10.1)
   name_of_person (~> 1.1)
@@ -388,7 +374,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   sidekiq (~> 6.0, >= 6.0.3)
-  sinatra
   sitemap_generator (~> 6.1, >= 6.1.2)
   spring
   spring-watcher-listen (~> 2.0.0)
