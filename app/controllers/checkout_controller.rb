@@ -11,7 +11,7 @@ def create
   end
 
 
-  # Stripe.api_key = Rails.application.credentials.dig(:stripe, :secret_key)
+  Stripe.api_key = Rails.application.credentials.dig(:stripe, :secret_key)
     @session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
