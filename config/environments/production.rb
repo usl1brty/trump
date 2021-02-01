@@ -4,14 +4,28 @@ Rails.application.configure do
      :address => 'smtp.sendgrid.net',
      :port => '587',
      :authentication => :plain,
-     :user_name => Rails.application.credentials.sendgrid(:username),
-     :password => Rails.application.credentials.sendgrid(:api_key),
+     :user_name => ENV['SENDGRID_USERNAME'],
+     :password => ENV['SENDGRID_PASSWORD'],
+     # :user_name => Rails.application.credentials.sendgrid(:username),
+     # :password => Rails.application.credentials.sendgrid(:api_key),
      :domain => 'trumpdebt.heroku.com',
      :enable_starttls_auto => true
    }
 
-   config.action_mailer.delivery_method = :smtp
-   config.action_mailer.default_url_options ={:host => 'http://www.trumpdebt.heroku.com'}
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'trumpdebt.heroku.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+}
+
+   # config.action_mailer.delivery_method = :smtp
+   # config.action_mailer.default_url_options ={:host => 'http://www.trumpdebt.heroku.com'}
 
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # config.action_mailer.perform_deliveries = true
