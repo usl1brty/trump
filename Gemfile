@@ -6,6 +6,7 @@ ruby '2.7.0'
 gem 'stripe'
 gem 'rename'
 gem 'aws-sdk', '~> 3'
+gem 'sendgrid-ruby'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
