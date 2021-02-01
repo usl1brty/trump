@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Donation.create(name: 'Five Bucks', amount: 5)
+
+
 require 'csv'
 CSV.foreach('congress.csv') do |row|
   last_name = row[0]
