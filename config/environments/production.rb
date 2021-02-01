@@ -6,7 +6,7 @@ Rails.application.configure do
      :authentication => :plain,
      :user_name => Rails.application.credentials.sendgrid(:username),
      :password => Rails.application.credentials.sendgrid(:api_key),
-     :domain => 'heroku.com',
+     :domain => 'trumpdebt.heroku.com',
      :enable_starttls_auto => true
    }
 
