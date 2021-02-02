@@ -1,5 +1,5 @@
 class AddPledgeToUsers < ActiveRecord::Migration[6.0]
-  # def change
-  #   change_column :users, :pledge, :integer
-  # end
+  def change
+    change_column :users, :pledge, :integer
+  end
 end
