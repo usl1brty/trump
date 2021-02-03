@@ -25,7 +25,7 @@ config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true
 }
 
-Rails.application.routes.default_url_options[:host] = 'trumpdebt.herokuapp.com'
+config.action_mailer.default_url_options = { :host => 'trumpdebt.herokuapp.com', :protocol => 'https' }
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"
 
