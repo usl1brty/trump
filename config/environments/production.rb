@@ -1,6 +1,7 @@
   Rails.application.configure do
 
   ActionMailer::Base.smtp_settings = {
+     :from  => 'brian_mcguire@yahoo.com',
      :address => 'smtp.sendgrid.net',
      :port => '587',
      :authentication => :plain,
@@ -8,7 +9,7 @@
      :password => ENV['SENDGRID_PASSWORD'],
      # :user_name => Rails.application.credentials.sendgrid(:username),
      # :password => Rails.application.credentials.sendgrid(:api_key),
-     :domain => 'trumpdebt.heroku.com',
+     :domain => 'https://trumpdebt.herokuapp.com',
      :enable_starttls_auto => true
    }
 
@@ -17,7 +18,7 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'trumpdebt.heroku.com',
+    :domain => 'https://trumpdebt.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
@@ -25,8 +26,6 @@ config.action_mailer.smtp_settings = {
 }
 
 Rails.application.routes.default_url_options[:host] = 'trumpdebt.herokuapp.com'
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"
 

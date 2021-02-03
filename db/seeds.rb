@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Donation.create({"name"=>"Three Buck Donation", "amount"=> "3"})
-Donation.create({"name"=>"Five Buck Donation", "amount"=> "5"})
-Donation.create({"name"=>"Ten Buck Donation", "amount"=> "10"})
-Donation.create({"name"=>"Twenty Buck Donation", "amount"=> "20"})
-Donation.create({"name"=>"One Hundred Buck Donation", "amount"=> "100"})
+# Donation.create({"name"=>"Three Buck Donation", "amount"=> "3"})
+# Donation.create({"name"=>"Five Buck Donation", "amount"=> "5"})
+# Donation.create({"name"=>"Ten Buck Donation", "amount"=> "10"})
+# Donation.create({"name"=>"Twenty Buck Donation", "amount"=> "20"})
+# Donation.create({"name"=>"One Hundred Buck Donation", "amount"=> "100"})
 
 
 # require 'csv'
