@@ -6,7 +6,7 @@
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.default :charset => "utf-8"
       ActionMailer::Base.smtp_settings = {
-        :from                 => 'brianmcguire1968@gmail.com',
+        # :from                 => 'brianmcguire1968@gmail.com',
         :user_name            => ENV['SENDGRID_USERNAME'],
         :password             => ENV['SENDGRID_PASSWORD'],
         :domain               => 'https://trumpdebt.herokuapp.com',
