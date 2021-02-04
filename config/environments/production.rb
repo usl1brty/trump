@@ -1,15 +1,31 @@
   Rails.application.configure do
 
-    ActionMailer::Base.smtp_settings = {
-      domain: 'trumpdebt.herokuapp.com',
-      address:        "smtp.sendgrid.net",
-      port:            587,
-      authentication: :plain,
-      user_name:      'apikey',
-      password:       ENV['SENDGRID_API_KEY']
-    }
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.default_url_options = { host: "http://trumpdebt.herokuapp.com" }
+#     ActionMailer::Base.smtp_settings = {
+#       domain: 'trumpdebt.herokuapp.com',
+#       address:        "smtp.sendgrid.net",
+#       port:            587,
+#       authentication: :plain,
+#       user_name:      'apikey',
+#       password:       ENV['SENDGRID_API_KEY']
+#     }
+# config.action_mailer.delivery_method = :smtp
+# config.action_mailer.default_url_options = { host: "http://trumpdebt.herokuapp.com" }
+#
+
+ActionMailer::Base.smtp_settings = {
+   :address => 'smtp.sendgrid.net',
+   :port => '587',
+   :authentication => :plain,
+   :user_name => Rails.application.credentials.sendgrid[:username],
+   :password => Rails.application.credentials.sendgrid[:api_key],
+   :domain => 'http://trumpdebt.herokuapp.com',
+   :enable_starttls_auto => true
+ }
+
+ config.action_mailer.delivery_method = :smtp
+ config.action_mailer.default_url_options ={:host => 'http://trumpdebt.herokuapp.com'}
+
+
 
   # Code is not reloaded between requests.
   config.cache_classes = true
