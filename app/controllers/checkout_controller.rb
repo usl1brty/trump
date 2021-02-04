@@ -22,8 +22,10 @@ def create
         # :image 'https://trumpdebt.s3.ca-central-1.amazonaws.com/trumpfamily.jpeg',
         quantity: 1
     }],
-    success_url: 'http://localhost:3000/paymentthankyou',
-    cancel_url: 'http://localhost:3000/paymentcanceled'
+    # success_url: 'http://localhost:3000/paymentthankyou',
+    # cancel_url: 'http://localhost:3000/paymentcanceled'
+    success_url: 'https://trumpdebt.herokuapp.com/paymentthankyou',
+    cancel_url: 'https://trumpdebt.herokuapp.com/paymentcanceled'
   )
 
   respond_to do |format|
