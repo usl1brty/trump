@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'stripe'
+gem 'rename'
 gem 'aws-sdk', '~> 3'
 gem 'sendgrid-ruby'
 
