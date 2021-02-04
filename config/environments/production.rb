@@ -1,25 +1,13 @@
   Rails.application.configure do
 
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.default_url_options = { host:'https://trumpdebt.herokuapp.com' }
-    config.action_mailer.perform_deliveries = true
-    config.action_mailer.raise_delivery_errors = true
-    config.action_mailer.default :charset => "utf-8"
-      ActionMailer::Base.smtp_settings = {
-        # :from                 => 'brianmcguire1968@gmail.com',
-        :user_name            => ENV['SENDGRID_USERNAME'],
-        :password             => ENV['SENDGRID_PASSWORD'],
-        :domain               => 'https://trumpdebt.herokuapp.com',
-        :address              => 'smtp.sendgrid.net',
-        :port                 => 587,
-        :authentication       => :plain,
-        :enable_starttls_auto => true
-      }
-
-
-# config.stripe.secret_key = Rails.application.credentials.stripe[:production][:secret_key]
-# config.stripe.publishable_key = Rails.application.credentials.stripe[:production][:publishable_key]
-  # Settings specified here will take precedence over those in config/application.rb.
+    ActionMailer::Base.smtp_settings = {
+      domain: 'trumpdebt.herokuapp.com',
+      address:        "smtp.sendgrid.net",
+      port:            587,
+      authentication: :plain,
+      user_name:      'apikey',
+      password:       ENV['SENDGRID_API_KEY']
+    }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
