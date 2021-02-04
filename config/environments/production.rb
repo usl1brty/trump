@@ -1,7 +1,7 @@
   Rails.application.configure do
 
 #     ActionMailer::Base.smtp_settings = {
-#       domain: 'trumpdebt.herokuapp.com',
+#       domain: 'trumpdebtcrowdfund.com',
 #       address:        "smtp.sendgrid.net",
 #       port:            587,
 #       authentication: :plain,
@@ -9,7 +9,7 @@
 #       password:       ENV['SENDGRID_API_KEY']
 #     }
 # config.action_mailer.delivery_method = :smtp
-# config.action_mailer.default_url_options = { host: "http://trumpdebt.herokuapp.com" }
+# config.action_mailer.default_url_options = { host: "http://trumpdebtcrowdfund.com" }
 #
 
 ActionMailer::Base.smtp_settings = {
@@ -18,12 +18,12 @@ ActionMailer::Base.smtp_settings = {
    :authentication => :plain,
    :user_name => Rails.application.credentials.sendgrid[:username],
    :password => Rails.application.credentials.sendgrid[:api_key],
-   :domain => 'http://trumpdebt.herokuapp.com',
+   :domain => 'http://trumpdebtcrowdfund.com',
    :enable_starttls_auto => true
  }
 
  config.action_mailer.delivery_method = :smtp
- config.action_mailer.default_url_options ={:host => 'http://trumpdebt.herokuapp.com'}
+ config.action_mailer.default_url_options ={:host => 'http://trumpdebtcrowdfund.com'}
 
 
 

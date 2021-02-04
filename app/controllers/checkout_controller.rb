@@ -24,8 +24,8 @@ def create
     }],
     # success_url: 'http://localhost:3000/paymentthankyou',
     # cancel_url: 'http://localhost:3000/paymentcanceled'
-    success_url: 'https://trumpdebt.herokuapp.com/paymentthankyou',
-    cancel_url: 'https://trumpdebt.herokuapp.com/paymentcanceled'
+    success_url: 'https://trumpdebtcrowdfund.com/paymentthankyou',
+    cancel_url: 'https://trumpdebtcrowdfund.com/paymentcanceled'
   )
 
   respond_to do |format|
